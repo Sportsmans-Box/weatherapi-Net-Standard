@@ -23,4 +23,13 @@
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
 
+  <PropertyGroup>
+  <PackageId>WeatherAPI.Standard</PackageId>
+  <RepositoryType>git</RepositoryType>
+  <RepositoryUrl>https://github.com/Sportsmans-Box/weatherapi-Net-Standard</RepositoryUrl>
+  <PackageDescription>WeatherAPI.Standard as Nuget package.</PackageDescription>
+  <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+
 </Project>
