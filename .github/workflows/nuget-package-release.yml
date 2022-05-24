@@ -1,7 +1,6 @@
 name: Pack weatherapi-Net-Standard Nuget
 
 env:
-  WORKING_DIRECTORY: ./WeatherApi.Standard
   NUGET_URL: ${{ secrets.NUGET_URL }}
   USER: ${{ secrets.USER}}
   PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
@@ -21,15 +20,12 @@ jobs:
 
     - name: Build
       run: dotnet build --configuration Release /p:Version=${VERSION}
-      working-directory: ${{env.WORKING_DIRECTORY}}
 
     - name: Pack
       run: dotnet pack --configuration Release /p:Version=${VERSION} --output .
-      working-directory: ${{env.WORKING_DIRECTORY}}
 
     - name: Push
       run: dotnet nuget push weatherapi-Net-Standard.${VERSION}.nupkg --source ${NUGET_URL} --api-key ${PACKAGE_TOKEN}
-      working-directory: ${{env.WORKING_DIRECTORY}}
 
     - name: Cleanup Private Package Sources
       if: always()
