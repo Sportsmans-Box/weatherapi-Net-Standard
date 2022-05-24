@@ -1,0 +1,38 @@
+name: Pack weatherapi-Net-Standard Nuget
+
+env:
+  WORKING_DIRECTORY: ./WeatherApi.Standard
+  NUGET_URL: ${{ secrets.NUGET_URL }}
+  USER: ${{ secrets.USER}}
+  PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
+  VERSION: '1.0.0' 
+on:
+  push:
+    branches: [ sportsmans-box ]
+    paths-ignore:
+      - '**.md'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build
+      run: dotnet build --configuration Release /p:Version=${VERSION}
+      working-directory: ${{env.WORKING_DIRECTORY}}
+
+    - name: Pack
+      run: dotnet pack --configuration Release /p:Version=${VERSION} --output .
+      working-directory: ${{env.WORKING_DIRECTORY}}
+
+    - name: Push
+      run: dotnet nuget push weatherapi-Net-Standard.${VERSION}.nupkg --source ${NUGET_URL} --api-key ${PACKAGE_TOKEN}
+      working-directory: ${{env.WORKING_DIRECTORY}}
+
+    - name: Cleanup Private Package Sources
+      if: always()
+      continue-on-error: true
+      run: |
+        dotnet nuget remove source github
