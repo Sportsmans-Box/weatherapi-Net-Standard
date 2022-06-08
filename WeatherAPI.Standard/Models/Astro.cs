@@ -25,6 +25,8 @@ namespace WeatherAPI.Standard.Models
         private string sunset;
         private string moonrise;
         private string moonset;
+        private string moonphase;
+        private string moonillumination;
 
         /// <summary>
         /// Sunrise time
@@ -93,5 +95,41 @@ namespace WeatherAPI.Standard.Models
                 onPropertyChanged("Moonset");
             }
         }
+
+        /// <summary>
+        /// Moonphase
+        /// </summary>
+        [JsonProperty("moon_phase")]
+        public string MoonPhase
+        {
+            get
+            {
+                return this.moonphase;
+            }
+            set
+            {
+                this.moonphase = value;
+                onPropertyChanged("Moonphase");
+            }
+        }
+
+        // <summary>
+        /// Moon illumination as percent
+        /// </summary>
+        [JsonProperty("moon_illumination")]
+        public string MoonIllumination
+        {
+            get
+            {
+                return this.moonillumination;
+            }
+            set
+            {
+                this.moonillumination = value;
+                onPropertyChanged("Moonillumination");
+            }
+        }
+
+
     }
 } 

@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/frederickernest/Projects/Work/Repos/weatherapi-Net-Standard/WeatherAPI.Standard/WeatherAPI.Standard.csproj": {}
+  },
+  "projects": {
+    "/Users/frederickernest/Projects/Work/Repos/weatherapi-Net-Standard/WeatherAPI.Standard/WeatherAPI.Standard.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/frederickernest/Projects/Work/Repos/weatherapi-Net-Standard/WeatherAPI.Standard/WeatherAPI.Standard.csproj",
+        "projectName": "WeatherAPI.Standard",
+        "projectPath": "/Users/frederickernest/Projects/Work/Repos/weatherapi-Net-Standard/WeatherAPI.Standard/WeatherAPI.Standard.csproj",
+        "packagesPath": "/Users/frederickernest/.nuget/packages/",
+        "outputPath": "/Users/frederickernest/Projects/Work/Repos/weatherapi-Net-Standard/WeatherAPI.Standard/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/frederickernest/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard1.3"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://github.com/weatherapicom/weatherapi-Net-Standard": {},
+          "https://nuget.pkg.github.com/Sportsmans-Box/index.json": {}
+        },
+        "frameworks": {
+          "netstandard1.3": {
+            "targetAlias": "netstandard1.3",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard1.3": {
+          "targetAlias": "netstandard1.3",
+          "dependencies": {
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[1.6.1, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[10.0.3, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/5.0.408/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
